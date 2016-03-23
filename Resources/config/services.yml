@@ -1,0 +1,13 @@
+parameters:
+    tuan_quynh_user.bundle: TuanQuynhUserBundle
+    tuan_quynh_user.repository.base.class: TuanQuynh\UserBundle\Repository\BaseRepository
+    tuan_quynh_user.repository.user.class: TuanQuynh\UserBundle\Repository\UserRepository
+
+services:
+    tuan_quynh_user.repository.base:
+        class: %tuan_quynh_user.repository.base.class%
+        arguments: ["@doctrine.orm.default_entity_manager", %tuan_quynh_user.bundle%]
+
+    tuan_quynh_user.repository.user:
+        class: %tuan_quynh_user.repository.user.class%
+        parent: tuan_quynh_user.repository.base

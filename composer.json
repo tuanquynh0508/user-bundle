@@ -1,0 +1,32 @@
+{
+    "name": "tuanquynh/user-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony 3 User Management Bundle",
+    "keywords": ["User management"],
+    "homepage": "https://github.com/tuanquynh0508/user-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nguyen Nhu Tuan",
+            "email": "tuanquynh0508@gmail.com",
+            "homepage": "http://i-designer.net/"
+        }
+    ],
+    "support": {
+        "forum": "https://github.com/tuanquynh0508/user-bundle"
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/symfony": "3.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TuanQuynh\\UserBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
