@@ -1,10 +1,9 @@
 parameters:
     tuan_quynh_user.bundle: TuanQuynhUserBundle
-
     tuan_quynh_user.repository.base.class: TuanQuynh\UserBundle\Repository\BaseRepository
     tuan_quynh_user.repository.user.class: TuanQuynh\UserBundle\Repository\UserRepository
-
     tuan_quynh_user.service.user.class: TuanQuynh\UserBundle\Service\UserService
+    tuan_quynh_user.security.webservice_user_provider.class: TuanQuynh\UserBundle\Security\User\WebserviceUserProvider
 
 services:
     tuan_quynh_user.repository.base:
@@ -20,3 +19,6 @@ services:
         calls:
             - [setUserRepository, ["@tuan_quynh_user.repository.user"]]
             - [setSecurityEncoder, ["@security.password_encoder"]]
+
+    tuan_quynh_user.security.webservice_user_provider:
+        class: %tuan_quynh_user.security.webservice_user_provider.class%

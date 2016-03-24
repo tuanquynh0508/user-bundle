@@ -3,6 +3,7 @@
 namespace TuanQuynh\UserBundle\Service;
 
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
+use TuanQuynh\UserBundle\Entity\User;
 use TuanQuynh\UserBundle\Repository\UserRepository;
 use TuanQuynh\UserBundle\Exception\UserNotFoundException;
 use TuanQuynh\UserBundle\Exception\UnAuthorizedException;
@@ -44,7 +45,7 @@ class UserService
      *
      * @param  string $username
      * @param  string $password
-     * @return boolean
+     * @return User
      * @throws UserNotFoundException If user not found
      * @throws UnAuthorizedException If username or password wrong
      */
@@ -60,6 +61,7 @@ class UserService
             throw new UnAuthorizedException(401, "Username or Password wrong");
         }
 
-        return true;
+        return $user;
     }
+
 }
