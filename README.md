@@ -55,5 +55,5 @@ tuanquynh_user:
 7 - UPDATE DATABASE
 ```
 php bin/console doctrine:schema:update --force
-php bin/console tuanquynh:user:create admin1 123 test1@gmail.com
+php bin/console tuanquynh:user:create admin 123 test1@gmail.com
 ```

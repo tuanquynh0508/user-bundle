@@ -64,4 +64,21 @@ class UserService
         return $user;
     }
 
+    /**
+     * Load User By Username
+     *
+     * @param  string $username [description]
+     * @return User
+     * @throws UserNotFoundException If user not found
+     */
+    public function loadUserByUsername($username)
+    {
+        $user = $this->userRepository->loadUserByUsername($username);
+        if (null === $user) {
+            throw new UserNotFoundException(404, "User {$username} not found");
+        }
+
+        return $user;
+    }
+
 }

@@ -4,6 +4,7 @@ parameters:
     tuan_quynh_user.repository.user.class: TuanQuynh\UserBundle\Repository\UserRepository
     tuan_quynh_user.service.user.class: TuanQuynh\UserBundle\Service\UserService
     tuan_quynh_user.security.webservice_user_provider.class: TuanQuynh\UserBundle\Security\User\WebserviceUserProvider
+    tuan_quynh_user.security.webservice_authentication_provider.class: TuanQuynh\UserBundle\Security\Authentication\Provider\WebserviceAuthenticationProvider
 
 services:
     tuan_quynh_user.repository.base:
@@ -22,3 +23,12 @@ services:
 
     tuan_quynh_user.security.webservice_user_provider:
         class: %tuan_quynh_user.security.webservice_user_provider.class%
+
+    tuan_quynh_user.security.webservice_authentication_provider:
+        class:  %tuan_quynh_user.security.webservice_authentication_provider.class%
+        arguments: ["", ""]
+        public: false
+
+    form_authenticator:
+          class: TuanQuynh\UserBundle\Security\FormAuthenticator
+          arguments: ["@router"]

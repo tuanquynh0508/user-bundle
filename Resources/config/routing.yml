@@ -1,4 +1,4 @@
 tuan_quynh_user:
-    resource: "@TuanQuynhUserBundle/Controller/UserController.php"
+    resource: "@TuanQuynhUserBundle/Controller/SecurityController.php"
     type:     annotation
-    prefix:   /user
+    prefix:   /
