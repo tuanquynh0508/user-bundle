@@ -27,9 +27,14 @@ class WebserviceUserProvider implements UserProviderInterface
         $this->userService = $userService;
     }
 
-    public function loadUserByUsername($username, $password)
+    public function login($username, $password)
     {
         return $this->userService->login($username, $password);
+    }
+
+    public function loadUserByUsername($username)
+    {
+        return $this->userService->loadUserByUsername($username);
     }
 
     public function refreshUser(UserInterface $user)
