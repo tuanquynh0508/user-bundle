@@ -7,7 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 
-use TuanQuynh\UserBundle\Entity\User
+use TuanQuynh\UserBundle\Entity\User;
 use TuanQuynh\UserBundle\Service\UserService;
 
 class WebserviceUserProvider implements UserProviderInterface
